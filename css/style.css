@@ -1,0 +1,339 @@
+/* ===== VARIABLES (colores y fuente) ===== */
+:root {
+  --color-oscuro: #2d3039;  /* header, footer, botones, textos */
+  --color-rojo: #ff3333;    /* etiquetas, botón agregar, detalles */
+  --color-blanco: #ffffff;
+  --color-azul: #0088aa;    /* texto de las cuotas */
+  --color-gris: #555555;    /* fondo del banner si no carga la imagen */
+  --color-borde: #cccccc;   /* bordes de inputs y paginación */
+  --fuente: 'Raleway', Arial, sans-serif;
+}
+
+/* ===== ESTILOS GENERALES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  color: var(--color-oscuro);
+  background-color: var(--color-blanco);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Caja centrada que usamos en todas las secciones */
+.contenedor {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Botones */
+.boton {
+  display: inline-block;
+  background-color: var(--color-oscuro);
+  color: var(--color-blanco);
+  padding: 10px 28px;
+  border-radius: 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.boton-claro {
+  background-color: var(--color-blanco);
+  color: var(--color-oscuro);
+}
+
+/* ===== HEADER ===== */
+.header {
+  background-color: var(--color-oscuro);
+  color: var(--color-blanco);
+  padding: 20px 0;
+}
+
+.header .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+  font-size: 14px;
+}
+
+/* ===== HERO (home) ===== */
+.hero {
+  background-image: url('../assets/img/banner-principal.png');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-gris);
+  color: var(--color-blanco);
+  padding: 70px 0;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* ===== COLECCIONES (home) ===== */
+.coleccion {
+  padding: 60px 0;
+}
+
+.coleccion .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Para que la segunda colección tenga la imagen a la izquierda */
+.coleccion-invertida .contenedor {
+  flex-direction: row-reverse;
+}
+
+.coleccion-texto {
+  width: 45%;
+}
+
+.coleccion-texto h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.coleccion-texto p {
+  font-size: 14px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--color-rojo);
+  margin-bottom: 20px;
+}
+
+.coleccion img {
+  width: 40%;
+}
+
+/* ===== TÍTULOS DE SECCIÓN ===== */
+.titulo-seccion {
+  font-size: 24px;
+  margin: 40px 0 25px 0;
+}
+
+/* ===== TARJETAS DE PRODUCTO ===== */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.producto {
+  width: calc(33.33% - 20px);
+  position: relative;
+  font-size: 12px;
+}
+
+.producto img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.etiqueta-nuevo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  font-size: 10px;
+  padding: 3px 10px;
+}
+
+.producto-licencia {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+
+.producto-nombre {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.producto-precio {
+  margin-bottom: 4px;
+}
+
+.producto-cuotas {
+  color: var(--color-azul);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* ===== SHOP ===== */
+.shop {
+  display: flex;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.filtros {
+  width: 180px;
+  font-size: 12px;
+}
+
+.filtros h3 {
+  font-size: 12px;
+  margin: 15px 0 6px 0;
+}
+
+.filtros input[type="text"],
+.filtros select {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid var(--color-borde);
+}
+
+.filtros input[type="number"] {
+  width: 50px;
+  padding: 3px;
+}
+
+.filtros label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.listado {
+  flex: 1;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0 40px 0;
+  font-size: 12px;
+}
+
+.paginacion a {
+  padding: 4px 8px;
+  border: 1px solid var(--color-borde);
+}
+
+.pagina-activa {
+  border-color: var(--color-rojo) !important;
+  color: var(--color-rojo);
+}
+
+/* ===== ITEM (detalle de producto) ===== */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 50px 0;
+}
+
+.item img {
+  width: 45%;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-licencia {
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.item-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.item-info p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.item-compra {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.item-compra input {
+  width: 45px;
+  padding: 6px;
+  text-align: center;
+}
+
+.boton-rojo {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  border: none;
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.item-precio {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: var(--color-oscuro);
+  color: var(--color-blanco);
+  padding: 40px 0 20px 0;
+  font-size: 12px;
+}
+
+.footer .contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer li {
+  margin-bottom: 6px;
+}
+
+.footer-logo {
+  width: 60px;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 11px;
+}
